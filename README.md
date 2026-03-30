@@ -1,20 +1,36 @@
-# SauceDemo Automation Project (EPAM Final Task)
+# SauceDemo Automation Project
 
-## Description
-This project automates 5 login scenarios for the [SauceDemo](https://www.saucedemo.com/) website. It uses **Selenium WebDriver**, **TestNG**, and the **Page Object Model (POM)** pattern to ensure clean and maintainable code.
+This repository contains automated tests for the **Login Flow** of the [SauceDemo](https://www.saucedemo.com) application.
 
-## Tech Stack
-- **Java 17**
-- **Selenium 4.18.1**
-- **TestNG** (with Parallel Execution)
-- **Maven**
-- **Allure & AspectJ Weaver** (Reporting)
+## Project Task Description
+**Focus:** Different login scenarios and error handling.
 
-## Prerequisites
-- **Java 17** installed and configured.
-- **Maven** installed.
-- **Microsoft Edge** browser.
-- **Google Chrome** browser.
+### Test Cases (User Scenarios)
+* **UC-1: Login/Logout Flow (Happy Path)**
+    * Login as `standard_user`.
+    * Verify inventory visibility.
+    * Logout and verify return to login page.
+* **UC-2: Locked Out User**
+    * Login as `locked_out_user`.
+    * Verify error: *"Epic sadface: Sorry, this user has been locked out."*
+* **UC-3: Empty Login Test**
+    * Leave Username empty.
+    * Verify error: *"Epic sadface: Username is required"*.
+* **UC-4: Empty Password Test**
+    * Enter `standard_user`, leave Password empty.
+    * Verify error: *"Epic sadface: Password is required"*.
+* **UC-5: Invalid Credentials Test**
+    * Enter invalid username/password combination.
+    * Verify error: *"Epic sadface: Username and password do not match any user in this service"*.
+
+
+
+## Technical Requirements
+* **Tools:** Selenium WebDriver
+* **Design Pattern:** Page Object Model (POM)
+* **Browsers:** Chrome, Edge (Run in Parallel)
+* **Locators:** CSS Selectors, XPath
+
 
 
 ## How to Run Tests and Generate Report
